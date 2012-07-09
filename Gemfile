@@ -15,6 +15,7 @@ gem "carrierwave", '0.5.3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'stripe'
 gem 'kaminari'
+gem 'devise'
 group :development do
 	gem "rspec-rails"
 	gem "sqlite3"
