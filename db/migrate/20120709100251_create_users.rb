@@ -1,12 +1,12 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
-    create_table :users do |t|
-      t.string :name
-      t.string :email
-      t.string :hashed_password
+    # create_table :users do |t|
+    #   t.string :name
+    #   t.string :email
+    #   t.string :hashed_password
 
-      t.timestamps
-    end
+    #   t.timestamps
+#    end
   end
 
   def self.down
