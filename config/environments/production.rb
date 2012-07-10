@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-Gencms::Application.configure do
-=======
+
 Genericcmsdev::Application.configure do
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -24,11 +22,8 @@ Genericcmsdev::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-<<<<<<< HEAD
-  # Defaults to Rails.root.join("public/assets")
-=======
   # Defaults to nil and saved in location specified by config.assets.prefix
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
+
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
@@ -69,12 +64,9 @@ Genericcmsdev::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-<<<<<<< HEAD
-=======
   config.action_mailer.default_url_options = { :host => 'gencms.herokuapp.com/' }
 # =>     config.action_mailer.default_url_options = { :host => 'http://gencms.herokuapp.com/' }
   
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-Gencms::Application.configure do
-=======
+
 Genericcmsdev::Application.configure do
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -38,9 +36,6 @@ Genericcmsdev::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-<<<<<<< HEAD
-=======
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
 end

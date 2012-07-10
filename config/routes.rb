@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-Gencms::Application.routes.draw do
-=======
+
 Genericcmsdev::Application.routes.draw do
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }
 
@@ -8,7 +6,6 @@ Genericcmsdev::Application.routes.draw do
 
 #  get "pages/index"
 
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,11 +55,7 @@ Genericcmsdev::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-<<<<<<< HEAD
-  # root :to => 'welcome#index'
-=======
    root :to => 'pages#index'
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-Gencms::Application.configure do
-=======
+
 Genericcmsdev::Application.configure do
->>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's
