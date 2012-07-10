@@ -16,6 +16,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'stripe'
 gem 'kaminari'
 gem 'devise'
+gem 'omniauth'
 group :development do
 	gem "rspec-rails"
 	gem "sqlite3"
