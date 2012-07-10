@@ -213,7 +213,6 @@ DEPENDENCIES
   fog
   jquery-rails
   kaminari
-  omniauth
   omniauth-twitter
   pg
   rails
