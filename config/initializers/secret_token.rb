@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Genericcmsdev::Application.config.secret_token = 'a75f8813ef3d4712b6b4174ddc70eb14908153a0660168facf687035d75faa494a94b06f0f24c36d2659d927c86b0a1229e7fb9dd582471f66f66bf9b5ff15c5'
+Genericcmsdev::Application.config.secret_token = 'da0ff85712f2263f4f5b8cb3de4e0a9741f5e62f37520377c8dd2e63e35316c4c0133740139955693eb77dd1f596bb0d47804db63caea92a49491aaf61d5b73c'
