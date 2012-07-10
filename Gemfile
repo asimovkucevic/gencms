@@ -17,6 +17,7 @@ gem 'stripe'
 gem 'kaminari'
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-twitter'
 group :development do
 	gem "rspec-rails"
 	gem "sqlite3"
