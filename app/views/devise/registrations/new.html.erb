@@ -1,0 +1,40 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "span12" id = "Signup">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <h2>Sign up</h2>
+          <div class="control-group">
+            <%= f.label :email %>
+            <div class="controls">
+              <%= f.email_field :email %>
+              <span class="help-block">This is how you'll login.</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :password %>
+            <div class="controls">
+              <%= f.password_field :password %>
+              <span class="help-block">Your password need to be at least 6 characters.</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :password_confirmation %>
+            <div class="controls">
+              <%= f.password_field :password_confirmation %>
+              <span class="help-block">Type your password one more time.</span>
+            </div>
+          </div>
+          <div>
+            <%= f.submit "Sign up", :class => "btn btn-primary btn-large" %>
+          </div>
+          <div class = "subtext">
+            <p>
+               Have an account?
+               <%= render "devise/shared/links" %>
+            </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

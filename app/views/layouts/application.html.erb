@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Gencms</title>
+=======
+  <title>Genericcmsdev</title>
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<<<<<<< HEAD
 <%= yield %>
+=======
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Generic CMS</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <% if user_signed_in? %>
+                  <li>
+                    <a>Signed in as <%= current_user.email %></a>
+                  </li>
+                  <li>
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                  </li>
+              <% else %>
+                  <li>
+                    <%= link_to "Sign up", new_user_registration_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Sign in", new_user_session_path %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+
+	<%= yield %>
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
 
 </body>
 </html>

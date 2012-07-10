@@ -1,18 +1,28 @@
 GEM
   remote: https://rubygems.org/
   specs:
+<<<<<<< HEAD
     actionmailer (3.2.3)
       actionpack (= 3.2.3)
       mail (~> 2.4.4)
     actionpack (3.2.3)
       activemodel (= 3.2.3)
       activesupport (= 3.2.3)
+=======
+    actionmailer (3.2.6)
+      actionpack (= 3.2.6)
+      mail (~> 2.4.4)
+    actionpack (3.2.6)
+      activemodel (= 3.2.6)
+      activesupport (= 3.2.6)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       journey (~> 1.0.1)
       rack (~> 1.4.0)
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
+<<<<<<< HEAD
       sprockets (~> 2.1.2)
     activemodel (3.2.3)
       activesupport (= 3.2.3)
@@ -30,6 +40,46 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.0)
+=======
+      sprockets (~> 2.1.3)
+    activeadmin (0.4.4)
+      bourbon (>= 1.0.0)
+      devise (>= 1.1.2)
+      fastercsv
+      formtastic (~> 2.1.1)
+      inherited_resources (>= 1.3.1)
+      jquery-rails (>= 1.0.0)
+      kaminari (>= 0.13.0)
+      meta_search (>= 0.9.2)
+      rails (>= 3.0.0)
+      sass (>= 3.1.0)
+    activemodel (3.2.6)
+      activesupport (= 3.2.6)
+      builder (~> 3.0.0)
+    activerecord (3.2.6)
+      activemodel (= 3.2.6)
+      activesupport (= 3.2.6)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.6)
+      activemodel (= 3.2.6)
+      activesupport (= 3.2.6)
+    activesupport (3.2.6)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    arel (3.0.2)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
+    bcrypt-ruby (3.0.1-x86-mingw32)
+    bootstrap-sass (2.0.4.0)
+    bourbon (2.1.0)
+      sass (>= 3.1)
+    builder (3.0.0)
+    carrierwave (0.5.3)
+      activesupport (~> 3.0)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -37,22 +87,93 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+<<<<<<< HEAD
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
     i18n (0.6.0)
+=======
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+    diff-lcs (1.1.3)
+    erubis (2.7.0)
+    excon (0.13.4)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    factory_girl (3.5.0)
+      activesupport (>= 3.0.0)
+    fastercsv (1.5.5)
+    fog (1.3.1)
+      builder
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.3)
+    formtastic (2.1.1)
+      actionpack (~> 3.0)
+    has_scope (0.5.1)
+    hashie (1.2.0)
+    hike (1.2.1)
+    i18n (0.6.0)
+    inherited_resources (1.3.1)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     journey (1.0.4)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
+<<<<<<< HEAD
+=======
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+<<<<<<< HEAD
     mime-types (1.19)
     multi_json (1.3.6)
+=======
+    meta_search (1.1.3)
+      actionpack (~> 3.1)
+      activerecord (~> 3.1)
+      activesupport (~> 3.1)
+      polyamorous (~> 0.5.0)
+    mime-types (1.19)
+    multi_json (1.3.6)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.5.2)
+    nokogiri (1.5.4-x86-mingw32)
+    oauth (0.4.6)
+    omniauth (1.1.0)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.12)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
+    orm_adapter (0.1.0)
+    pg (0.13.2-x86-mingw32)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -61,6 +182,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+<<<<<<< HEAD
     rails (3.2.3)
       actionmailer (= 3.2.3)
       actionpack (= 3.2.3)
@@ -79,6 +201,45 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+=======
+    rails (3.2.6)
+      actionmailer (= 3.2.6)
+      actionpack (= 3.2.6)
+      activerecord (= 3.2.6)
+      activeresource (= 3.2.6)
+      activesupport (= 3.2.6)
+      bundler (~> 1.0)
+      railties (= 3.2.6)
+    railties (3.2.6)
+      actionpack (= 3.2.6)
+      activesupport (= 3.2.6)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
+    rake (0.9.2.2)
+    rdoc (3.12)
+      json (~> 1.4)
+    responders (0.9.1)
+      railties (~> 3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rmagick (2.12.0)
+    rspec (2.10.0)
+      rspec-core (~> 2.10.0)
+      rspec-expectations (~> 2.10.0)
+      rspec-mocks (~> 2.10.0)
+    rspec-core (2.10.1)
+    rspec-expectations (2.10.0)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.10.1)
+    rspec-rails (2.10.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (~> 2.10.0)
+    ruby-hmac (0.4.0)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     sass (3.1.20)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -89,7 +250,14 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6-x86-mingw32)
+<<<<<<< HEAD
     thor (0.14.6)
+=======
+    stripe (1.7.0)
+      multi_json (~> 1.1)
+      rest-client (~> 1.4)
+    thor (0.15.4)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
@@ -98,14 +266,45 @@ GEM
     uglifier (1.2.6)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+<<<<<<< HEAD
+=======
+    warden (1.2.1)
+      rack (>= 1.0)
+    xml-simple (1.1.1)
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+<<<<<<< HEAD
   coffee-rails (~> 3.2.1)
   jquery-rails
   rails (= 3.2.3)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+=======
+  activeadmin
+  aws-s3
+  bcrypt-ruby
+  bootstrap-sass
+  carrierwave (= 0.5.3)
+  coffee-rails
+  devise
+  execjs
+  factory_girl
+  fog
+  jquery-rails
+  kaminari
+  omniauth
+  omniauth-twitter
+  pg
+  rails
+  rmagick (= 2.12.0)
+  rspec-rails
+  sass-rails
+  sqlite3
+  stripe
+  uglifier
+>>>>>>> 90f2cf47a82bfaac45a42542bc335830eec5a070
