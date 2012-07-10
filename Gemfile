@@ -17,7 +17,7 @@ gem 'stripe'
 gem 'kaminari'
 gem 'factory_girl'
 gem 'devise'
-# => gem 'omniauth'
+gem 'omniauth'
 gem 'omniauth-twitter'
 group :development do
 	gem "rspec-rails"
