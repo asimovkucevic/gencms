@@ -1,4 +1,4 @@
-Gencms::Application.configure do
+Genericcmsdev::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -61,6 +61,9 @@ Gencms::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.action_mailer.default_url_options = { :host => 'gencms.herokuapp.com/' }
+# =>     config.action_mailer.default_url_options = { :host => 'http://gencms.herokuapp.com/' }
+  
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

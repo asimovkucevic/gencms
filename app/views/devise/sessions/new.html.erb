@@ -1,0 +1,40 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "span12" id = "Signin">
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <h2>Sign in</h2>
+          <div class="control-group">
+            <%= f.label :email %>
+            <div class="controls">
+              <%= f.email_field :email %>
+              <span class="help-block">This is how you'll login.</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :password %>
+            <div class="controls">
+              <%= f.password_field :password %>
+              <span class="help-block">Your password need to be at least 6 characters.</span>
+            </div>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+              <label class="checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </label>
+          <% end -%>
+          <div>
+            <%= f.submit "Sign in", :class => "btn btn-primary btn-large" %>
+          </div>
+          <div class = "subtext">
+            <p>
+              Don't have an account?
+              <%= render "devise/shared/links" %>
+            </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

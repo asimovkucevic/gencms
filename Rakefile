@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Gencms::Application.load_tasks
+Genericcmsdev::Application.load_tasks
