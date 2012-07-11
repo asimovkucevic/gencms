@@ -1,6 +1,8 @@
 
 Genericcmsdev::Application.routes.draw do
+  resources :authentications
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }
+  match 'auth/:provider/callback' => 'authentications#create'
 
 #  get "auth/twitter"
 
