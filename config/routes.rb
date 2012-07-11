@@ -1,6 +1,8 @@
 Genericcmsdev::Application.routes.draw do
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }
 
+#  get "auth/twitter"
+
 #  get "pages/index"
 
   # The priority is based upon order of creation:
