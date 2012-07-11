@@ -11,12 +11,158 @@
  *= require_self
  *= require_tree .
  */
- 
- @import "bootstrap";
- 
+
+@import "bootstrap";
+
 body
 {
-	padding-top: 60px;
+  padding-top: 60px;
+  background-color: #FAFAFA!important;
 }
 
- @import "bootstrap-responsive";
+@import "bootstrap-responsive";
+
+/* Navbar
+-------------------------------------------------- */
+
+.brand
+{
+  font-size: 24px!important;
+  color: #ffffff!important;
+  padding-top: 14px!important;
+  padding-bottom: 14px!important;
+}
+.navbar .nav > li > a
+{
+  line-height: 19px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  font-size: 16px!important;
+  font-weight: bold!important;
+}
+.navbar .nav
+{
+  margin-top: 7px!important;
+}
+
+/* Signup, Signin
+-------------------------------------------------- */
+
+#Signup form,
+#Signin form,
+#ForgotPassword form
+{
+  min-height: 20px;
+  padding:20px;
+  padding-bottom:20px;
+  width:500px;
+  margin: 25px auto;
+  background-color: transparent;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#Signup h2,
+#Signin h2,
+#ForgotPassword h2
+{
+  color: #5E5E5E;
+}
+#Signup .control-group,
+#Signin .control-group,
+#ForgotPassword .control-group
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#Signup .control-group label,
+#Signin .control-group label,
+#ForgotPassword .control-group label
+{
+  color: #5E5E5E;
+  display: inline;
+  font-size: 17px;
+}
+#Signup .control-group .controls input,
+#Signin .control-group .controls input,
+#ForgotPassword .control-group .controls input
+{
+  font-size: 14px!important;
+  height: 22px!important;
+  line-height: 22px!important;
+  margin-top: 5px;
+  width: 500px;
+}
+#Signup .control-group .controls .help-block,
+#Signin .control-group .controls .help-block,
+#ForgotPassword .control-group .controls .help-block
+{
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  color: #B5B5B5;
+}
+.subtext p
+{
+  color: #5E5E5E;
+  font-size: 17px;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+}
+.subtext p a
+{
+  text-decoration: none;
+}
+.checkbox
+{
+  margin-bottom: 20px;
+}
+#error_explanation
+{
+  width:467px;
+  margin: 30px auto;
+  min-height: 20px;
+  padding: 10px 20px;
+  color: #B94A48;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+#error_explanation h2
+{
+  color: #B94A48;
+  font-size: 20px!important;
+}
+#flash_alert
+{
+  width:470px;
+  margin: 30px auto 10px;
+  min-height: 20px;
+  padding: 10px 20px 10px 30px;
+  color: #B94A48;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#flash_notice
+{
+  width:470px;
+  margin: 30px auto 10px;
+  min-height: 20px;
+  padding: 10px 20px 10px 30px;
+  color: #B94A48;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
