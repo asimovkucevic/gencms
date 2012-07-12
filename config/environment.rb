@@ -6,4 +6,3 @@ require File.expand_path('../application', __FILE__)
 #Gencms::Application.initialize!
 
 Genericcmsdev::Application.initialize!
-
