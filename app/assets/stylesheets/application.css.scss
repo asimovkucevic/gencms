@@ -166,3 +166,28 @@ body
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+.signin-providers
+{
+  min-height: 20px;
+  padding:20px;
+  padding-bottom:20px;
+  width:500px;
+  margin: 25px auto;
+  background-color: transparent;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.signin-providers h3
+{
+  color: #5E5E5E;
+  font-weight: normal!important;
+  margin: -5px 0px 10px;
+}
+.signin-providers a
+{
+  text-decoration: none;
+}

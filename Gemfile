@@ -33,6 +33,8 @@ group :assets do
   gem 'uglifier'
   gem 'bootstrap-sass'
 end
+gem "mocha", :require => false
+gem 'nifty-generators'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -43,3 +45,5 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 
+
+gem "mocha", :group => :test
