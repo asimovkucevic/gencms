@@ -7,10 +7,6 @@ Genericcmsdev::Application.routes.draw do
   match 'auth/failure' => redirect('/')
   match 'sign_out' => 'authentications#destroy', :as => 'sign_out'
 
-#  get "auth/twitter"
-
-#  get "pages/index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

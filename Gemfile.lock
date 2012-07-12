@@ -139,6 +139,11 @@ GEM
       rack
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
+    omniauth-google-oauth2 (0.1.12)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-linkedin (0.0.6)
+      omniauth-oauth (~> 1.0.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -239,7 +244,6 @@ DEPENDENCIES
   devise
   execjs
   factory_girl
-  faraday
   fog
   jquery-rails
   kaminari
@@ -247,6 +251,8 @@ DEPENDENCIES
   nifty-generators
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
+  omniauth-linkedin
   omniauth-twitter
   pg
   rails
