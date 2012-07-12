@@ -19,6 +19,7 @@ gem 'factory_girl'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 group :development do
 	gem "rspec-rails"
 	gem "sqlite3"
@@ -35,6 +36,7 @@ group :assets do
 end
 gem "mocha", :require => false
 gem 'nifty-generators'
+gem 'faraday'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
