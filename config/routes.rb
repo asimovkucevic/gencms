@@ -4,6 +4,8 @@ Genericcmsdev::Application.routes.draw do
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }, 
     :controllers => { :registrations => 'registrations' }
   match 'auth/:provider/callback' => 'authentications#create'
+  match 'auth/failure' => redirect('/')
+  match 'sign_out' => 'authentications#destroy', :as => 'sign_out'
 
 #  get "auth/twitter"
 
