@@ -22,6 +22,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
+gem 'cancan'
+
 group :development do
 	gem "rspec-rails"
 	gem "sqlite3"

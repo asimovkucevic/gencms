@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.form.js
 //= require jquery_ujs
 //= require bootstrap
-
+//= require active_admin.js
+//= require pages.js

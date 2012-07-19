@@ -6,15 +6,44 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids
   # attr_accessible :title, :body
   	has_many :authentications
+    has_and_belongs_to_many :roles    
+
+    before_save :save_as_admin
+#    after_save    :save_as_admin
 
   	def apply_omniauth(omniauth)
+     self.email =  omniauth['info']['email'] if email.blank?          
   		authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
     end
 
   	def password_required?
   		(authentications.empty? || !password.blank?) && super
   	end
+
+  def role?(role)
+      return !!self.roles.find_by_name(role.to_s.camelize)
+  end
+    
+  def self.test_user(email, password, password_confirmation)
+    self.create!( :email => email, :password => password, :password_confirmation => password_confirmation )
+  end
+
+  private
+
+  def save_as_admin
+
+    if self.role_ids.first == 1
+      AdminUser.create!( :email => email, :password => password, :password_confirmation => password_confirmation )
+#      AdminUser.create!( :email => "aa@gmail.com", :password => "password", :password_confirmation => "password" )      
+    else
+#      AdminUser.create!( :email => "aa@gmail.com", :password => "password", :password_confirmation => "password" )      
+       user1 = self.all(:include => :roles, :conditions => ["roles.id = ?", 1])
+       adminUser = AdminUser.where([" email = ? ", user1[0].email.to_s]).first
+       AdminUser.destroy(adminUser.id)
+    end    
+  end
+
 end

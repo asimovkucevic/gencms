@@ -1,7 +1,9 @@
 class AuthenticationsController < ApplicationController
+
+# => before_filter :authenticate_user!, :except => [:some_action_without_auth]
+
   def index
     @authentications = current_user.authentications if current_user
-
 #    Authentication.all
   end
 
@@ -38,6 +40,7 @@ class AuthenticationsController < ApplicationController
   def destroy
     @authentication = current_user.authentications.find(params[:id])
 #     Authentication.find(params[:id])
+#    render :text => params[:id].to_s
     @authentication.destroy
     redirect_to authentications_url, :notice => "Successfully destroyed authentication."
   end
