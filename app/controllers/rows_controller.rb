@@ -1,21 +1,20 @@
 class RowsController < ApplicationController
   def index
     @tables = Table.all
-#    @rows = Row.where([" table_id = ? ", 1])
   end
 
   def show
-    @tables = Table.all    
-    @columns = Column.all
-    @rows = Row.all
+    @tables = Table.where([" id = ? ", params[:tid].to_i])
+    @columns = Column.where([" table_id = ? ", params[:tid].to_i])
+    @rows = Row.where([" table_id = ? ",  params[:tid].to_i])
   end
 
   def new
     @row = Row.new 
     @table_id = params[:tid].to_i
-    @tables = Table.all    
-    @columns = Column.all
-    @rows = Row.all    
+    @tables = Table.where([" id = ? ", params[:tid].to_i])
+    @columns = Column.where([" table_id = ? ", params[:tid].to_i])
+    @rows = Row.where([" table_id = ? ",  params[:tid].to_i])    
   end
 
   def create

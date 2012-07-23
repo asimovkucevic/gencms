@@ -6,8 +6,8 @@ require 'rspec/autorun'
 require 'factory_girl'
 FactoryGirl.find_definitions
 require "test/unit"
-#require "mocha"
-config.mock_with :mocha
+require "mocha"
+#config.mock_with :mocha
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
