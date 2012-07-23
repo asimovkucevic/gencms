@@ -1,15 +1,5 @@
 
 Genericcmsdev::Application.routes.draw do
-  get "rows/index"
-
-  get "rows/new"
-
-  get "rows/create"
-
-  get "rows/edit"
-
-  get "rows/update"
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -17,6 +7,7 @@ Genericcmsdev::Application.routes.draw do
   resources :authentications
   resources :tables  
   resources :columns    
+  resources :rows      
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }, 
     :controllers => { :registrations => 'registrations' }
   resources :users  # => , :authentications
@@ -24,7 +15,8 @@ Genericcmsdev::Application.routes.draw do
   match 'auth/failure' => redirect('/')
   match 'sign_out' => 'authentications#destroy', :as => 'sign_out'
 
-#  match 'super/admin' => 'super_admin#index'
+  match 'table/:tid/rows/show' => 'rows#show'
+  match 'table/:tid/rows/new' => 'rows#new'  
 #  match 'test_signout' => 'authentications#destroy'
 
   # The priority is based upon order of creation:

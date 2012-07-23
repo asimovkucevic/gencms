@@ -1,2 +1,10 @@
-<h1>Rows#edit</h1>
-<p>Find me in app/views/rows/edit.html.erb</p>
+<h2>Edit</h2>
+<div style="clear:both;" ></div>
+
+<% @columns.each_with_index do |column, index| %>
+	<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
+	<%= render :partial => column.column_type.control_path, :locals => { :name => column.column_name } %>	
+<% end %>
+<div style="clear:both;" ></div>
+
+

@@ -1,0 +1,11 @@
+<h2>Show</h2>
+<div style="clear:both;" ></div>
+
+<% @columns.each_with_index do |column, index| %>
+	<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
+<% end %>
+<div style="clear:both;" ></div>
+<% @rows.each_with_index do |row, index| %>
+	<%= render :partial => "/shared/print_rows", :locals => { :data => row.row_data } %>
+<% end %>
+

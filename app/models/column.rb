@@ -1,7 +1,8 @@
 class Column < ActiveRecord::Base
 
 	belongs_to :table
-	has_one :column_type
+#	has_one :column_type
+	belongs_to :column_type
 
   attr_accessible :column_name, :column_type_id, :table_id
 

@@ -1,2 +1,17 @@
-<h1>Rows#new</h1>
-<p>Find me in app/views/rows/new.html.erb</p>
+<h2>New</h2>
+<div style="clear:both;" ></div>
+
+<%= form_for(@row, :url => {:action => "create", :controller=> "rows"}, :html => {:method => "post", :id => "formRow" }) do |f| %>
+	<fieldset>
+		<%= hidden_field_tag "column_count", @columns.count %>		
+		<%= hidden_field_tag "table_id", @table_id %>				
+		<% @columns.each_with_index do |column, index| %>
+			<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
+			<%= render :partial => column.column_type.control_path, :locals => { :name => "name" + index.to_s } %>	
+			<%= hidden_field_tag "column_id" + index.to_s, column.id %>								
+			<div style="clear:both;" ></div>	
+		<% end %>
+	</fieldset>
+    <%= f.submit "Create Row", :class => "btn btn-primary btn-large" %>
+<% end %>
+<div style="clear:both;" ></div>
