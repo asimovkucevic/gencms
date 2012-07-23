@@ -1,5 +1,15 @@
 
 Genericcmsdev::Application.routes.draw do
+  get "rows/index"
+
+  get "rows/new"
+
+  get "rows/create"
+
+  get "rows/edit"
+
+  get "rows/update"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
