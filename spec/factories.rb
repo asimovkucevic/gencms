@@ -1,10 +1,20 @@
-Factory.define :user do |u|
-	u.email "joe@gmail.com"
-	u.password "password"
+FactoryGirl.define do
+  factory :user do
+    email "joe@gmail.com"
+    password "password"
+  end
 end
 
-Factory.define :message do |m|
-	m.association :sender, :factory => :blue
-	m.association :recipient, :factory => :blue
-	m.subject "This is a message"
+FactoryGirl.define do
+  factory :authentication do
+    provider "facebook"
+    uid "123456789"
+  end
+end
+
+FactoryGirl.define do
+  factory :table do
+    table_name "table"
+    table_desc "description"
+  end
 end
