@@ -1,24 +1,14 @@
-
-      <h2>Enter column</h2>
-      <div class="control-group">
-        <%= label_tag column_name %>
-        <div class="controls">
-          <%= text_field_tag column_name %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= label_tag column_type_id %>
-        <div class="controls">
-          <%= select_tag column_type_id, options_from_collection_for_select(@column_type, "id", "name") %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= label_tag required_field %>
-        <div class="controls">
-          <%= check_box_tag required_field, true, false %>
-          <span class="help-block"></span>
-        </div>
-      </div>      
+<li>
+	<%= label_tag column_name %>
+    <%= text_field_tag column_name %>
+</li>
+<li>
+    <%= label_tag column_type_id %>
+	<%= select_tag column_type_id, options_from_collection_for_select(@column_type, "id", "name") %>
+</li>
+<li>     
+    <%= label_tag required_field %>
+    <%= check_box_tag required_field, true, false %>
+	<hr />
+</li>    
 

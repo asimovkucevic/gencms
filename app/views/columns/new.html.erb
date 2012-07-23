@@ -1,76 +1,48 @@
+<div id="header"><h1 id="site_title">Genericcmsdev</h1>
+	<ul class="header-item" id="tabs">
+		<li id="dashboard"><a href="/admin">Dashboard</a></li>
+		<li id="users"><a href="/admin/users">Users</a></li>
+		<li class="current" id="tables"><a href="/tables">Tables</a></li>
+	</ul>
+	<p class="header-item" id="utility_nav"><span class="current_user">admin@example.com</span><a href="/admin/logout" data-method="get">Logout</a></p></div>
+		<div id="title_bar">
+			<div id="titlebar_left">
+				<span class="tbreadcrumb">
+					<a href="/admin">Admin</a>            
+					<span class="tbreadcrumb_sep">/</span>
+					<a href="/tables">Tables</a>
+				</span>
+				<h2 id="page_title">Columns</h2>
+			</div>
+		</div>
+</div>
+<div id="active_admin_content" class="without_sidebar">
+    <div id="main_content_wrapper">
+        <div id="main_content">
+			<%= form_for(@column, :url => {:action => "create", :controller=> "columns"}, :html => {:method => "post", :id => "formColumn" }) do |f| %>
+				<fieldset class="inputs">
+				<%= hidden_field_tag "table_id", session[:table_id] %>  
+				<div id="form_legend"><span>Column Details</span></div>
+				<ol>
+					<% @array_counter.each_with_index do |element, index| %>
+						<%= render :partial => "/shared/print_columns", :locals => { :column_name => "column_name" + index.to_s, :column_type_id => "column_type_id" + index.to_s, :required_field => "required_field" + index.to_s } %>
+					<% end %>
+				</ol>
+				</fieldset>
+				<fieldset class="buttons">
+				<ol>
+					<li class="commit button">
+						<%= f.submit "Create Columns" %>
+					</li>
+					<li class="cancel">
+						<a href="/admin/users">Cancel</a>
+					</li>
+				</ol>
+				</fieldset>
+			<% end %>
+			</div>
+		</div>
+    </div>
+</div>
 
- <br /> 
- <br />
- <br />
- <br /> 
- <br />
-
-<h2>General Properties - Columns</h2>
-
-<%= form_for(@column, :url => {:action => "create", :controller=> "columns"}, :html => {:method => "post", :id => "formColumn" }) do |f| %>
-	<fieldset>
-      <%= f.hidden_field :table_id, :value => session[:table_id] %>    
-      <h2>Enter column</h2>
-      <div class="control-group">
-        <%= f.label :column_name %>
-        <div class="controls">
-          <%= f.text_field :column_name %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :column_type_id %>
-        <div class="controls">
-          <%= f.select :column_type_id, options_from_collection_for_select(@column_type, "id", "name") %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div>
-        <%= f.submit "Create Table", :class => "btn btn-primary btn-large" %>
-      </div>
-
-
-      <%= hidden_field_tag :table_id, :value => session[:table_id] %>    
-      <h2>Enter column</h2>
-      <div class="control-group">
-        <%= f.label :column_name %>
-        <div class="controls">
-          <%= f.text_field :column_name %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :column_type_id %>
-        <div class="controls">
-          <%= f.select :column_type_id, options_from_collection_for_select(@column_type, "id", "name") %>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div>
-        <%= f.submit "Create Table", :class => "btn btn-primary btn-large" %>
-      </div>      
-	</fieldset>
-<% end %>
-
-
- <br /> 
- <br />
- <br />
- <br /> 
- <br />
-
-<h2>General Properties - Columns</h2>
-
-<%= form_for(@column, :url => {:action => "create", :controller=> "columns"}, :html => {:method => "post", :id => "formColumn" }) do |f| %>
-	<fieldset>
-      <%= hidden_field_tag "table_id", session[:table_id] %>    
-
-      <% @array_counter.each_with_index do |element, index| %>
-        <%= render :partial => "/shared/print_columns", :locals => { :column_name => "column_name" + index.to_s, :column_type_id => "column_type_id" + index.to_s, :required_field => "required_field" + index.to_s } %>
-      <% end %>
-      <div>
-        <%= f.submit "Create Columns", :class => "btn btn-primary btn-large" %>
-      </div>      
-	</fieldset>
-<% end %>
 

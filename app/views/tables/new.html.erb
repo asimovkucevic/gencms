@@ -20,10 +20,6 @@
     <div id="main_content_wrapper">
         <div id="main_content">
 			<%= form_for(@table, :url => {:action => "create", :controller=> "tables"}, :html => {:method => "post", :id => "formTable" }) do |f| %>
-				<div style="margin:0;padding:0;display:inline">
-					<input name="utf8" type="hidden" value="&#x2713;" />
-					<input name="authenticity_token" type="hidden" value="mRMMKX1QiSqxZRe9MjWGNzBNHDe+IRKZB0KR643Xwp4=" />
-				</div>
 				<fieldset class="inputs">
 				<div id="form_legend"><span>Table Details</span></div>
 				<ol>
