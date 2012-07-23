@@ -1,0 +1,21 @@
+ <br /> 
+ <br />
+ <br />
+ <br /> 
+ <br />
+
+<h2>General Properties - Columns</h2>
+
+<%= form_for(@column, :url => {:action => "create", :controller=> "columns"}, :html => {:method => "post", :id => "formColumn" }) do |f| %>
+	<fieldset>
+      <%= hidden_field_tag "table_id", session[:table_id] %>    
+
+      <% @array_counter.each_with_index do |element, index| %>
+        <%= render :partial => "/shared/print_columns", :locals => { :column_name => "column_name" + index.to_s, :column_type_id => "column_type_id" + index.to_s, :required_field => "required_field" + index.to_s } %>
+      <% end %>
+      <div>
+        <%= f.submit "Create Columns", :class => "btn btn-primary btn-large" %>
+      </div>      
+	</fieldset>
+<% end %>
+

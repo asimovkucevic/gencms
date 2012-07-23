@@ -1,0 +1,33 @@
+ <br /> 
+ <br />
+ <br />
+ <br /> 
+ <br />
+
+<h2>General Properties</h2>
+
+<%= form_for(@table, :url => {:action => "create", :controller=> "tables"}, :html => {:method => "post", :id => "formTable" }) do |f| %>
+	<fieldset>
+      <h2>Enter table</h2>
+      <div class="control-group">
+        <%= f.label :table_name %>
+        <div class="controls">
+          <%= f.text_field :table_name %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :table_desc %>
+        <div class="controls">
+          <%= f.text_field :table_desc %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+      <div>
+        <%= f.submit "Create Table", :class => "btn btn-primary btn-large" %>
+      </div>
+	</fieldset>
+<% end %>
+
