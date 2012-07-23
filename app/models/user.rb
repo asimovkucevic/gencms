@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
     has_and_belongs_to_many :roles    
 
     before_save :save_as_admin
-#    after_save    :save_as_admin
 
   	def apply_omniauth(omniauth)
      self.email =  omniauth['info']['email'] if email.blank?          
@@ -36,14 +35,11 @@ class User < ActiveRecord::Base
   def save_as_admin
 
     if self.role_ids.first == 1
-      AdminUser.create!( :email => email, :password => password, :password_confirmation => password_confirmation )
-#      AdminUser.create!( :email => "aa@gmail.com", :password => "password", :password_confirmation => "password" )      
+        AdminUser.create!( :email => email, :password => password, :password_confirmation => password_confirmation )        
     else
-#      AdminUser.create!( :email => "aa@gmail.com", :password => "password", :password_confirmation => "password" )      
-       user1 = self.all(:include => :roles, :conditions => ["roles.id = ?", 1])
-       adminUser = AdminUser.where([" email = ? ", user1[0].email.to_s]).first
-       AdminUser.destroy(adminUser.id)
+      user1 = User.all(:include => :roles, :conditions => [" users.id = ? ", self.id.to_i ])
+      adminUser = AdminUser.where([" email = ? ", user1[0].email.to_s]).first
+      AdminUser.destroy(adminUser.id)  unless adminUser.blank?
     end    
   end
-
 end

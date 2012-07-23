@@ -1,0 +1,35 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">Mikeno</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li <%= show_active(sel_index, 'home') %>><a href="/">Home</a></li>
+          <li <%= show_active(sel_index, 'about') %>><a href="/about">About</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+              <li>
+                <a>Signed in as <%= current_user.email %></a>
+              </li>
+              <li>
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </li>
+          <% else %>
+              <li <%= show_active(sel_index, 'signup') %>>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+              <li <%= show_active(sel_index, 'signin') %>>
+                <%= link_to "Sign in", new_user_session_path %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
 @import "bootstrap";
@@ -192,3 +191,6 @@ body
 {
   text-decoration: none;
 }
+
+
+@import "tables";

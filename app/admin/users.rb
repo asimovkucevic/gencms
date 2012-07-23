@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   index do
     column :email
-	   default_actions
+	  default_actions
   end
 
   member_action :roles do
@@ -21,10 +21,10 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs "User Details" do
       	f.input :email
-        if f.object.new_record?
-          f.input :password
-          f.input :password_confirmation          
-        end
+#        if f.object.new_record?
+        f.input :password
+        f.input :password_confirmation          
+ #       end
         f.input :roles, as: :check_boxes      
     end
     f.buttons
