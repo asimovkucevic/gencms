@@ -1,5 +1,52 @@
-<h1>Rows#index</h1>
-<p>Find me in app/views/rows/index.html.erb</p>
-
-
-<%= render :partial => "/shared/tables_all_for_rows", :locals => { :tables => @tables } %>
+<div id="header"><h1 id="site_title">Genericcmsdev</h1>
+	<ul class="header-item" id="tabs">
+		<li id="dashboard"><a href="/admin">Dashboard</a></li>
+		<li id="users"><a href="/admin/users">Users</a></li>
+		<li class="current" id="tables"><a href="tables">Tables</a></li>
+	</ul>
+	<p class="header-item" id="utility_nav"><span class="current_user">admin@example.com</span><a href="/admin/logout" data-method="get">Logout</a></p></div>
+		<div id="title_bar">
+			<div id="titlebar_left">
+				<span class="tbreadcrumb">
+					<a href="/admin">Admin</a>            
+					<span class="tbreadcrumb_sep">/</span>
+					<a href="/tables">Table</a>     
+				</span>
+				<h2 id="page_title">Rows</h2>
+			</div>
+			<div id="titlebar_right">
+				<div class="action_items">
+				<span class="action_item">
+				<a href="/rows/new">New Rows</a>
+				</span>
+				</div>
+			</div>
+		</div>
+</div>
+<div id="active_admin_content" class="without_sidebar">
+	<div id="main_content_wrapper">
+        <div id="main_content">
+            <div class="paginated_collection">
+				<div class="paginated_collection_contents">
+					<div class="index_content">
+						<div class="index_as_table">
+							<table border="0" cellspacing="0" cellpadding="0" id="tables" class="index_table" paginator="true">
+								<thead>
+									<tr>
+										<th class="">Tables</th>
+										<th class=""></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<%= render :partial => "/shared/tables_all_for_rows", :locals => { :tables => @tables } %>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
