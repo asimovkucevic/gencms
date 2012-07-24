@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
   	end
 
   def role?(role)
-      return !!self.roles.find_by_name(role.to_s.camelize)
+#      return !!self.roles.find_by_name(role.to_s.camelize)
+      return !!self.roles.find_by_name(role)
   end
     
   def self.test_user(email, password, password_confirmation)
@@ -38,7 +39,7 @@ class User < ActiveRecord::Base
         AdminUser.create!( :email => email, :password => password, :password_confirmation => password_confirmation )        
     else
       user1 = User.all(:include => :roles, :conditions => [" users.id = ? ", self.id.to_i ])
-      adminUser = AdminUser.where([" email = ? ", user1[0].email.to_s]).first
+      adminUser = AdminUser.where([" email = ? ", user1[0].email.to_s]).first unless user1[0].blank?
       AdminUser.destroy(adminUser.id)  unless adminUser.blank?
     end    
   end

@@ -1,4 +1,14 @@
 class RowsController < ApplicationController
+
+  before_filter :check_permissions, :only => [:new, :create, :cancel] # => :new, :create, 
+  skip_before_filter :require_no_authentication
+
+  def check_permissions
+    @row = Row.new
+    authorize!  :create, @row # resource
+# load_and_authorize_resource    
+  end
+
   def index
     @tables = Table.all
   end

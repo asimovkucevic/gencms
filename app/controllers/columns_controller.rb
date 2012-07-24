@@ -1,4 +1,14 @@
 class ColumnsController < ApplicationController
+  before_filter :check_permissions, :only => [:new, :create, :cancel]   # => :new, :create, 
+  skip_before_filter :require_no_authentication
+
+  def check_permissions
+    @column = Column.new
+    authorize!  :create, @column # resource
+#   load_and_authorize_resource      
+  end
+
+
 
 	def index
 		@columns = Column.all

@@ -10,6 +10,12 @@ Genericcmsdev::Application.routes.draw do
   resources :rows      
   devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "signin" }, 
     :controllers => { :registrations => 'registrations' }
+
+  # devise_for :tables, :controllers => { :tables => 'tables' }
+  # devise_scope :table do 
+  #   match 'tables' => 'devise/sessions#destroy' 
+  # end
+
   resources :users  # => , :authentications
   match 'auth/:provider/callback' => 'authentications#create'
   match 'auth/failure' => redirect('/')
