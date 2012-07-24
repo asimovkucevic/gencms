@@ -10,6 +10,3 @@ class Row < ActiveRecord::Base
 	end
   end
 end
-
-#  	column_test = Column.where([" id = ? ", column_id.to_i]).first
-#column_test.required_field #== 't'  # => unless column_test.blank?

@@ -20,7 +20,6 @@ class RowsController < ApplicationController
   def create
     array_counter = Array.new(2, Hash.new)         
     array_counter[0..params[:column_count].to_i] = 1
-#    array_counter[0] = 1
 
     array_counter.each_with_index do |a, index|
       new_row = Row.new

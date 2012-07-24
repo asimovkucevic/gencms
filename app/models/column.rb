@@ -5,7 +5,7 @@ class Column < ActiveRecord::Base
 	has_one :row
   attr_accessible :column_name, :column_type_id, :table_id
 
-  validates_presence_of :column_name 	#, :if => :required_field?	# => true 	# :on => :create    
+  validates_presence_of :column_name 	#, :on => :create    
 
 	def self.save_columns(table_id, column_name, column_type_id, required_field)
 		unless table_id.blank? || column_name.blank? || column_type_id.blank?
