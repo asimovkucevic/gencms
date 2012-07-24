@@ -1,17 +1,47 @@
-<h2>New</h2>
-<div style="clear:both;" ></div>
+<div id="header"><h1 id="site_title">Genericcmsdev</h1>
+	<ul class="header-item" id="tabs">
+		<li id="dashboard"><a href="/admin">Dashboard</a></li>
+		<li id="users"><a href="/admin/users">Users</a></li>
+		<li class="current" id="tables"><a href="/tables">Tables</a></li>
+	</ul>
+	<p class="header-item" id="utility_nav"><span class="current_user">admin@example.com</span><a href="/admin/logout" data-method="get">Logout</a></p></div>
+		<div id="title_bar">
+			<div id="titlebar_left">
+				<span class="tbreadcrumb">
+					<a href="/admin">Admin</a>            
+					<span class="tbreadcrumb_sep">/</span>
+					<a href="/tables">Tables</a>
+				</span>
+				<h2 id="page_title">New Row</h2>
+			</div>
+		</div>
+</div>
+<div id="active_admin_content" class="without_sidebar">
+    <div id="main_content_wrapper">
+        <div id="main_content">
+			<%= form_for(@row, :url => {:action => "create", :controller=> "rows"}, :html => {:method => "post", :id => "formRow" }) do |f| %>
+				<fieldset class="inputs">
+					<%= hidden_field_tag "column_count", @columns.count %>		
+					<%= hidden_field_tag "table_id", @table_id %>
+					<div id="form_legend"><span>Rows Details</span></div>
+					<ol>
+					<% @columns.each_with_index do |column, index| %>
+						<li>
+							<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
+							<%= render :partial => column.column_type.control_path, :locals => { :name => "name" + index.to_s } %>	
+							<%= hidden_field_tag "column_id" + index.to_s, column.id %>								
+							<div style="clear:both;" ></div>	
+						</li>
+					<% end %>
+					</ol>
+				</fieldset>
+				<fieldset class="buttons">
+					<%= f.submit "Create Row" %>
+				</fieldset>
+			<% end %>
+			</div>
+		</div>
+    </div>
+</div>
 
-<%= form_for(@row, :url => {:action => "create", :controller=> "rows"}, :html => {:method => "post", :id => "formRow" }) do |f| %>
-	<fieldset>
-		<%= hidden_field_tag "column_count", @columns.count %>		
-		<%= hidden_field_tag "table_id", @table_id %>				
-		<% @columns.each_with_index do |column, index| %>
-			<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
-			<%= render :partial => column.column_type.control_path, :locals => { :name => "name" + index.to_s } %>	
-			<%= hidden_field_tag "column_id" + index.to_s, column.id %>								
-			<div style="clear:both;" ></div>	
-		<% end %>
-	</fieldset>
-    <%= f.submit "Create Row", :class => "btn btn-primary btn-large" %>
-<% end %>
-<div style="clear:both;" ></div>
+

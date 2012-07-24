@@ -1,3 +1,51 @@
+<div id="header"><h1 id="site_title">Genericcmsdev</h1>
+	<ul class="header-item" id="tabs">
+		<li id="dashboard"><a href="/admin">Dashboard</a></li>
+		<li id="users"><a href="/admin/users">Users</a></li>
+		<li class="current" id="tables"><a href="/tables">Tables</a></li>
+	</ul>
+	<p class="header-item" id="utility_nav"><span class="current_user">admin@example.com</span><a href="/admin/logout" data-method="get">Logout</a></p></div>
+		<div id="title_bar">
+			<div id="titlebar_left">
+				<span class="tbreadcrumb">
+					<a href="/admin">Admin</a>            
+					<span class="tbreadcrumb_sep">/</span>
+					<a href="/tables">Tables</a>
+				</span>
+				<h2 id="page_title">Table Details</h2>
+			</div>
+		</div>
+</div>
+<div id="active_admin_content" class="without_sidebar">
+	<div id="main_content_wrapper">
+        <div id="main_content">
+            <div class="paginated_collection">
+				<div class="paginated_collection_contents">
+					<div class="index_content">
+						<div class="index_as_table">
+							<table border="0" cellspacing="0" cellpadding="0" id="tables" class="index_table" paginator="true">
+								<thead>
+									<tr>
+										<% @columns.each_with_index do |column, index| %>
+											<th>
+												<%= render :partial => "/shared/control_label", :locals => { :name => column.column_name } %>
+											</th>
+										<% end %>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h2>Show</h2>
 <div style="clear:both;" ></div>
 
