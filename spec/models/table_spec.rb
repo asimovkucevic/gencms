@@ -11,15 +11,15 @@ describe Table do
   end
 
   it "must have a name" do
-    b = Table.new(:table_name => @t.table_name)
+    b = Table.new(:table_desc => @t.table_desc)
     b.should_not be_valid # => calls b.valid?
-    b.errors.include?(:table_desc).should_not be_nil
+    b.errors.include?(:table_name).should_not be_nil
   end
 
   it "must have a description" do
-    b = Table.new(:table_desc => @t.table_desc)
+    b = Table.new(:table_name => @t.table_name)
     b.should_not be_valid
-    b.errors.include?(:table_name).should_not be_nil
+    b.errors.include?(:table_desc).should_not be_nil
   end
 
   it "creates an instance of Table object" do

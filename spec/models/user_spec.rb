@@ -32,5 +32,10 @@ describe User do
     it "has authentications" do
       User.new.should respond_to(:authentications)
     end
+
+    it "has many and belongs to many roles" do
+      User.new.should respond_to(:roles)
+    end
+
   end
 end
