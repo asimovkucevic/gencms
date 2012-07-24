@@ -27,15 +27,16 @@
 								<thead>
 									<tr>
 										<% @columns.each_with_index do |column, index| %>
-											<th>
-
-											</th>
+												<%= render :partial => "/shared/print_header_rows", :locals => { :name => column.column_name } %>
 										<% end %>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-									</tr>
+									<% @rows.each_with_index do |row, index| %>
+										<%= is_first_column(index) %>
+											<%= render :partial => "/shared/print_rows", :locals => { :data => row.row_data } %>
+										<%= is_last_column(index, @columns.count) %>	
+									<% end %>
 								</tbody>
 							</table>
 						</div>
@@ -46,20 +47,4 @@
     </div>
 </div>
 
-<h2>Show</h2>
-
-<table border="0" cellspacing="0" cellpadding="0" id="tables" class="index_table" paginator="true">	
-	<thead>
-<% @columns.each_with_index do |column, index| %>
-		<%= render :partial => "/shared/print_header_rows", :locals => { :name => column.column_name } %>
-<% end %>
-	</thead>
-	<tbody>
-<% @rows.each_with_index do |row, index| %>
-	<%= is_first_column(index) %>
-		<%= render :partial => "/shared/print_rows", :locals => { :data => row.row_data } %>
-	<%= is_last_column(index, @columns.count) %>	
-<% end %>
-	</tbody>
-</table>
 

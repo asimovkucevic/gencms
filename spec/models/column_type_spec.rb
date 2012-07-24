@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe ColumnType do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "Associations" do
+    it "has one column" do
+      ColumnType.new.should respond_to(:column)
+    end
+  end
+
 end
