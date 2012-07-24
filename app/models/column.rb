@@ -1,9 +1,8 @@
 class Column < ActiveRecord::Base
 
 	belongs_to :table
-#	has_one :column_type
 	belongs_to :column_type
-
+	has_one :row
   attr_accessible :column_name, :column_type_id, :table_id
 
   validates_presence_of :column_name 	#, :if => :required_field?	# => true 	# :on => :create    
