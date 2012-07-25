@@ -4,9 +4,7 @@ class SuperAdminController < ApplicationController
 		@table = Table.new
 	end
 
-	def index_post
-#		@table = Table.new
-		
+	def index_post		
 	end
 
 

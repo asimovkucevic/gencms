@@ -5,8 +5,13 @@ class Row < ActiveRecord::Base
   validates :row_data, :presence => true, :if => :is_field_required?
 
   def is_field_required?
-  	if column.required_field.to_s == "true"
-		return true
+  	unless column.required_field.blank?
+	  	if (column.required_field.to_s == "true") 
+			return true
+		end
+		return false
+	else
+		return false
 	end
   end
 end

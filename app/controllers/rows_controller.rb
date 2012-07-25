@@ -1,14 +1,12 @@
 class RowsController < ApplicationController
-
-  before_filter :check_permissions, :only => [:new, :create, :cancel] # => :new, :create, 
+  load_and_authorize_resource
+  # before_filter :check_permissions, :only => [:new, :create, :cancel] # => :new, :create, 
   skip_before_filter :require_no_authentication
 
-  def check_permissions
-    @row = Row.new
-    authorize!  :create, @row # resource
-# load_and_authorize_resource    
-  end
-
+  # def check_permissions
+  #   @row = Row.new
+  #   authorize!  :create, @row # resource
+  # end
   def index
     @tables = Table.all
   end
@@ -28,8 +26,7 @@ class RowsController < ApplicationController
   end
 
   def create
-    array_counter = Array.new(2, Hash.new)         
-    array_counter[0..params[:column_count].to_i] = 1
+    array_counter = Array.new(params[:column_count].to_i){|i| Date.current.year-i}
 
     array_counter.each_with_index do |a, index|
       new_row = Row.new

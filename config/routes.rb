@@ -16,7 +16,7 @@ Genericcmsdev::Application.routes.draw do
   #   match 'tables' => 'devise/sessions#destroy' 
   # end
 
-  resources :users  # => , :authentications
+#  resources :users  # => , :authentications
   match 'auth/:provider/callback' => 'authentications#create'
   match 'auth/failure' => redirect('/')
   match 'sign_out' => 'authentications#destroy', :as => 'sign_out'
