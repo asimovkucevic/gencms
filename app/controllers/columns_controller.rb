@@ -7,9 +7,6 @@ class ColumnsController < ApplicationController
   #   @column = Column.new
   #   authorize!  :create, @column # resource
   # end
-
-
-
 	def index
 		@columns = Column.all
 	end
@@ -27,7 +24,7 @@ class ColumnsController < ApplicationController
 		array_counter.each_with_index do |element, index|
 			Column.save_columns(params["table_id"], params["column_name" + index.to_s], params["column_type_id" + index.to_s], params["required_field" + index.to_s])
 		end
-		redirect_to columns_path
+		redirect_to rows_path
 	end
 
 	def edit

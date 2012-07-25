@@ -12,7 +12,6 @@ class TablesController < ApplicationController #< Devise::RegistrationsControlle
 	end
 
 	def new
-
 		@table = Table.new
 	end	
 

@@ -6,8 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
   # def check_permissions
   #   authorize! :create, resource
   # end
-
-
 	def create
 		super
 		session[:omniauth] = nil unless @user.new_record?
