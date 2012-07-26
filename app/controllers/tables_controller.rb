@@ -19,8 +19,10 @@ class TablesController < ApplicationController #< Devise::RegistrationsControlle
 		table = Table.new(params[:table])
 		if table.save
 			session[:table_id] = table.id
+			redirect_to  new_column_path					
+		else			
+    		redirect_to new_table_url, :notice => Help.has_any_errors(table)
 		end
-		redirect_to  new_column_path
 	end
 
 	def edit

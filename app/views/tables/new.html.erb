@@ -18,9 +18,10 @@
 </div>
 <div id="active_admin_content" class="without_sidebar">
     <div id="main_content_wrapper">
-        <div id="main_content">
-			<%= form_for(@table, :url => {:action => "create", :controller=> "tables"}, :html => {:method => "post", :id => "formTable" }) do |f| %>
+        <div id="main_content">        	
+			<%= form_for(@table, :url => {:action => "create"}, :html => {:method => "post", :id => "formTable" }) do |f| %>
 				<fieldset class="inputs">
+
 				<div id="form_legend"><span>Table Details</span></div>
 				<ol>
 					<li>

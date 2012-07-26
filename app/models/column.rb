@@ -15,6 +15,9 @@ class Column < ActiveRecord::Base
 			column.column_type_id = column_type_id
 			column.required_field = required_field			
 			column.save
+			return true
+		else 
+			return false
 		end
 	end
 
